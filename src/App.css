@@ -1,38 +1,89 @@
-.App {
-  text-align: center;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+	background-image: linear-gradient( 135deg, #001034 10%, #4d34a1 100%);
+	background-attachment: fixed;
+	background-size: cover;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.header-nav nav {
+  background-color: black;
+  height: 80px;
   color: white;
+  display: flex;
+  align-items: center;
+  padding-right: 25px;
+  padding-left: 25px;
 }
 
-.App-link {
-  color: #61dafb;
+.header-nav nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  flex-basis: 80%;
+  gap: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header-nav a{
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.header-nav a:hover {
+  color: aquamarine;
+}
+
+.header-nav a:focus {
+  color: aquamarine;
+}
+
+.content {
+  width: 80%;
+  padding: 20px;
+  min-height: 530px;
+  background-color: whitesmoke;
+  border-radius: 15px;
+  border:  1px solid gray;
+  margin: 25px auto;
+}
+
+.login {
+  display: block;
+  margin: 15px;
+  padding: 15px;
+}
+
+.login input[type="text"], .login input[type="submit"] {
+  display: block;
+  margin: 10px auto;  /* Ajusta los márgenes para centrar */
+  padding: 10px;
+  width: 50%;  /* Ajusta el ancho al 50% del contenedor */
+  box-sizing: border-box;
+}
+
+.login input[type="submit"] {
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login input[type="submit"]:hover {
+  background-color: lightblue;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 80px; /* Ajusta el tamaño de la imagen */
+  margin-right: 10px; /* Espacio entre la imagen y el texto */
 }
