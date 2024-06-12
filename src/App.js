@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import { Context1 } from './context/Context1';
 import { AppRouter } from './routing/AppRouter';
@@ -6,19 +6,18 @@ import { AppRouter } from './routing/AppRouter';
 function App() {
 
   // Variable de estado
-  const [user, setUser] = useState({
-    username: '@Alejandro',
-    name: 'Alejandro Ramirez',
-    phone: '3206901245'
-  });
+  const [user, setUser] = useState({});
 
-  /* const clients = {
-    id: 100,
-    name: 'Catalina',
-    last_name: 'Saavedra',
-    phone: '3209652020',
-    city: 'Duitama'
-  } */
+  useEffect(() => {
+    // User que se guarda por primera vez useEffect() en localStorage
+    let user_local = JSON.parse(localStorage.getItem("user"));
+    setUser(user_local) 
+  }, []);
+
+  useEffect(() => {
+    // Cada Cambio de Usuario y obtiene el usuario del localStorage
+    localStorage.setItem("user", JSON.stringify(user))
+  }, [user]);
 
   return (
     <div className="App">
